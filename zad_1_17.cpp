@@ -4,14 +4,15 @@
 int main()
 {
     std::vector<int> v1{};
-    int n{1};
-
-    v1.push_back(100);
+    int n1{6};
+    int n2{2};
 
     while (v1.size() < 100)
     {
-        v1.push_back(v1[n-1] - n);
-        n++;
+        v1.push_back(n1);
+        v1.push_back(n2);
+        n1+=2;
+        n2++;
     }
     
 
