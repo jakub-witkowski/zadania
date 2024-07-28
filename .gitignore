@@ -1,3 +1,6 @@
+# .vscode/
+.vscode/*
+
 # executables
 zad_1_1
 zad_1_2
@@ -12,3 +15,4 @@ zad_1_9
 zad_1_10
 zad_1_11
 zad_1_12
+zad_1_13
