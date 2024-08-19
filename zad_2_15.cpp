@@ -8,7 +8,7 @@ void print_vector_backward(std::vector<int> v)
     
     for (size_t i = 1; i <= v.size(); i++)
     {
-        std::cout << v[v.size() - i] << " ";
+        std::cout << v.size() - i + 1 << ": " << v[v.size() - i] << " | ";
     }
     
     std::cout << std::endl;
@@ -57,7 +57,6 @@ void odd_numbers_to_opposite(std::vector<int>& v)
 int main()
 {
     int vector_length = draw_number(10,100);
-    // int vector_length = 10; 
     std::vector<int> v(vector_length);
 
     std::cout << "Losuję " << vector_length << " liczb do umieszczenia w wektorze.\n";
@@ -71,10 +70,7 @@ int main()
     }
 
     even_numbers_to_zero(v);
-    // std::cout << "Rozmiar wektora: " << v.size() << std::endl;
     odd_numbers_to_opposite(v);
-    // std::cout << "Rozmiar wektora: " << v.size() << std::endl;
-    // print_vector(v);
     print_vector_backward(v);
 
     return 0;
