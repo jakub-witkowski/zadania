@@ -11,9 +11,8 @@ int draw_number(int min, int max)
 
 void print_upper_triangle(int max, int n = 5)
 {
-    size_t center_pos = floor(max / 2);
-    size_t start_pos, end_pos;
-    start_pos = end_pos = center_pos;
+    size_t start_pos, end_pos, center_pos;
+    start_pos = end_pos = center_pos = floor(max / 2);
     
     for (size_t i = 0; i < ((n + 1) / 2); i++)
     {
@@ -34,7 +33,6 @@ void print_upper_triangle(int max, int n = 5)
 
 void print_christmas_tree(int n)
 {
-    // int max = n + ((n-1) * 2);
     int max = 5 + ((n-1) * 2);
 
     for (size_t i = 0; i < n; i++)
