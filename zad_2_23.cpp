@@ -1,22 +1,14 @@
 #include <iostream>
+#include <iomanip>
 
-struct less_than_zero
-{
-
-};
-
-int power_recursive(int b, int exp)
-{
-    return 0;
-}
+// int power_recursive(int b, int exp)
+// {
+//     return 0;
+// }
 
 int power_iterative(int b, unsigned exp)
 {
-    less_than_zero exc;
     int result{b};
-
-    if (exp < 0)
-        throw exc;
 
     if (exp == 0)
         return 0;
@@ -31,18 +23,57 @@ int power_iterative(int b, unsigned exp)
     return result;
 }
 
+double power_iterative(int b, int exp)
+{
+    double result{(double) b};
+
+    if (exp == 0)
+        return 0;
+    else if (exp == 1)
+        return result;
+    else if (exp < 0)
+    {
+        for (int i = 2; i <= abs(exp); i++)
+        {
+            result *= b;
+        }
+
+        return (1 / result);
+    }
+    else
+    {
+        for (int i = 2; i <= exp; i++)
+            result *= b;
+    }
+
+    return result;
+}
+
 int main()
 {
     int base;
-    unsigned exponent;
+    int input;
+    unsigned natural_exponent;
+    int integer_exponent;
 
     std::cout << "Wprowadź liczbę całkowitą, którą chcesz podnieść do potęgi: \n";
     std::cin >> base;
 
     std::cout << "Wprowadź liczbę całkowitą nieujemną, która ma być wykładnikiem: \n";
-    std::cin >> exponent;
+    std::cin >> input;
 
-    std::cout << "Liczba " << base << " podniesiona do potęgi " << exponent << " daje " << power_iterative(base, exponent) << ". \n";
+    if (input >= 0)
+    {
+        natural_exponent = input;
+        int result = power_iterative(base, natural_exponent);
+        std::cout << "Liczba " << base << " podniesiona do potęgi " << natural_exponent << " daje " << result << ". \n"; 
+    }
+    else
+    {
+        integer_exponent = input;
+        double result = power_iterative(base, integer_exponent);
+        std::cout << "Liczba " << base << " podniesiona do potęgi " << integer_exponent << " daje " << std::setprecision(3) << result << ". \n";
+    }
 
     return 0;
 }
