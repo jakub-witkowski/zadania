@@ -6,14 +6,14 @@
 //     return 0;
 // }
 
-int power_iterative(int b, unsigned exp)
+long long power_iterative(int b, unsigned exp)
 {
-    int result{b};
+    long long result{b};
 
     if (exp == 0)
         return 0;
     else if (exp == 1)
-        return b;
+        return result;
     else
     {
         for (int i = 2; i <= exp; i++)
@@ -25,7 +25,7 @@ int power_iterative(int b, unsigned exp)
 
 double power_iterative(int b, int exp)
 {
-    double result{(double) b};
+    double result{static_cast<double>(b)};
 
     if (exp == 0)
         return 0;
