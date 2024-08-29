@@ -66,7 +66,7 @@ int main()
     {
         natural_exponent = input;
         int result = power_iterative(base, natural_exponent);
-        std::cout << "Liczba " << base << " podniesiona do potęgi " << natural_exponent << " daje " << result << ". \n"; 
+        std::cout << "Liczba " << base << " podniesiona do potęgi " << natural_exponent << " daje " << result << ". \n";
     }
     else
     {
